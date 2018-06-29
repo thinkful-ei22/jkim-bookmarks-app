@@ -3,64 +3,80 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  margin: 60px;
-  background-color:#e9f4ff;
+  background-color: rgb(227, 233, 195)
 }
 
 h1 {
-  color: #5044ff;
-  position: relative;
-  margin-left: 15px;
-  font-size: 40px;
+  text-align: center;
 }
 
-h3 {
-  color: #EDF5E1;
+.js-title {
+  cursor: pointer;
 }
 
-p {
-  color: rgb(54, 30, 185);
+.hidden {
+  display: none;
 }
 
-a {
-  color: #EDF5E1;
+.js-create-form {
+  margin: 10px 0 20px 0;
+  border: 1px solid rgb(120, 167, 46);
+  padding: 20px;
+  list-style: none;
 }
 
-
-li {
-  border-radius: 8px;
+.js-create-form label {
   display: block;
-  padding: 15px;
-  margin: 50px auto 50px auto;
-  width: 50%;
-  background-color: #9858ff;
 }
 
-.logo {
-  width: 80px;
-  float: left;
+.js-create-form input, select {
+  margin: 5px;
 }
 
-.button {
-  background-color: white;
-  padding: 8px;
-  margin: 50px 50px 50px 0;
+
+.create-submit-button {
+  margin-top: 10px;
 }
 
-.js-add-min-buttons {
-  display: inline-block;
+.js-item-element {
+  background-color: darkkhaki;
+
 }
 
-.js-add-bookmark-button, #js-add-form {
-  margin-left: 50px;
+.js-item-element:hover {
+      box-shadow: 5px 5px 2px grey;
+
+}
+.js-item-element:hover h2 {
+  color: darkviolet
 }
 
-#css-rating {
-  float: right;
-  margin-left: 10ox;
+@media only screen and (min-width: 340px) {
+  .container {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+  
+  li {
+    margin-bottom: 20px;
+    border: 1px solid grey;
+    padding: 20px;
+    list-style: none;
+    max-width: 250px
+  }
 }
 
-#js-minimum-rating {
-  margin-left: 30px;
+@media only screen and (min-width: 640px) {
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  li {
+    margin-bottom: 20px;
+    border: 1px solid grey;
+    padding: 20px;
+    list-style: none;
+    max-width: 600px;
+  }
 }

@@ -1,12 +1,15 @@
+
 'use strict';
-/* global bookmarkActions, api, store */
+/* global bookmarkList store api $*/
 
+$(document).ready(function() {
+  bookmarkList.bindEventListeners();
+  bookmarkList.render();
 
+  api.getItems((items) => {
+    console.log(items);
+    items.forEach((item) => store.addItem(item));
+    bookmarkList.render();
 
-$(document).ready(function () {
-  bookmarkActions.bindEventListeners();
-  api.getBookmarks((bookmarks) => {
-    bookmarks.forEach(bookmark => store.addBookmark(bookmark));
-    bookmarkActions.render();
   });
 });

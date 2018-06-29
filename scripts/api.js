@@ -1,47 +1,38 @@
 'use strict';
-/* global  */
+/* global shoppingList, store api Item $*/
+
+const api = (function() {
+
+  const BASE_URL = 'https://thinkful-list-api.herokuapp.com/jon/bookmarks';
 
 
+  function getItems(callback) {
+    $.getJSON(`${BASE_URL}`, callback);
+  }
 
-const api = function() {
-  const BASE_URL = 'https://thinkful-list-api.herokuapp.com/jon';
-
-  const getBookmarks = function(callback) {
-  
+  const createBookmark = function(newData, callback) {
     $.ajax({
-      url: `${BASE_URL}/bookmarks`,
-      method: 'GET',
-      success: callback,
-    });
-  };
-
-  const createBookmark = function (name, callback) {
-    
-    const newBookmark = JSON.stringify(name);
-
-    $.ajax({
-      url: `${BASE_URL}/bookmarks`,
+      url: `${BASE_URL}`,
       method: 'POST',
       contentType: 'application/json',
-      data: newBookmark,
+      data: JSON.stringify(newData),
       success: callback,
     });
   };
 
-  const deleteBookmark = function (id, callback) {
-    
-
+  const deleteBookmark = function(id, callback) {
     $.ajax({
-      url: `${BASE_URL}/bookmarks/${id}`,
+      url: `${BASE_URL}/${id}`,
       method: 'DELETE',
+      data: JSON.stringify(id),
       success: callback,
     });
   };
 
-  
   return {
-    getBookmarks,
+    getItems,
     createBookmark,
-    deleteBookmark
+    deleteBookmark,
   };
-}();
+
+}());

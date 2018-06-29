@@ -1,58 +1,40 @@
 'use strict';
-/* global bookmarkActions, */
-
-// const store = {
-//   list: [{
-//      "title": "title",
-//      "url": "url",
-//      }],
-//   expanded: false
-//   isAdding: false,
-//   minRating: false
-// }
+// eslint-disable-next-line no-unused-vars
+const store = (function() {
 
 
-const store = function() {
 
-  const addBookmark = function(bookmark) {
-    // push bookmarks to the store array 
-    bookmark.expanded = false;
-    store.bookmarksList.push(bookmark);
+  const addItem = function(item) {
+    item.collapsed = true;
+    this.items.push(item);
   };
 
-  const deleteBookmark = function (deletedId) {
-    // remove bookmarks from the store array
-    store.bookmarksList = store.bookmarksList.filter(item => item.id !== deletedId);
-  };  
-
-  const expandBookmark = function (isExpanding) {
-    // show detailed view of the chosen bookmark
-    if (isExpanding.expanded === false) {
-      isExpanding.expanded = true;
-    } else {
-      isExpanding.expanded = false;
-    }
+  const toggleExpanded = function(id) {
+    const Item = this.items.find(bookmark => bookmark.id === id);
+    Item.collapsed = !Item.collapsed;
   };
 
-  const toggleIsAdding = function() {
+  const deleteBookmarkStore = function(id) {
+    const currentItem = this.items.find(bookmark => bookmark.id === id);
+    const currentIndex = this.items.indexOf(currentItem);
+    this.items.splice(currentIndex, 1);
+  };
+
+  const toggleAddForm = function() {
     this.isAdding = !this.isAdding;
   };
 
 
   return {
-    bookmarksList: [],
-    isAdding: false,
-    minRating: 1,
+    items: [],
+    isAdding: true,
+    filterLevel: 1,
+    createFormChecker: true,
 
-    addBookmark,
-    deleteBookmark,
-    expandBookmark,
-    toggleIsAdding,
+    addItem,
+    toggleExpanded,
+    deleteBookmarkStore,
+    toggleAddForm,
+
   };
-
-}();
-
-
-
-
-
+}());
