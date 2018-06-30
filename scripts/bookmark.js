@@ -31,7 +31,7 @@ const bookmarkList = (function () {
           <option value='2'>2 stars</option>
           <option value='1'>1 star</option>
         </select></label>
-      <button class='submit'>Add New Bookmark</button>
+      <button class='submit'>Add Bookmark</button>
     </form>
     </div>
     `;

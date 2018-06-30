@@ -1,14 +1,26 @@
 * {
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
-  background-color: rgb(227, 233, 195)
+  background-color: rgb(227, 233, 195);
+
 }
 
 h1 {
   text-align: center;
 }
+
+button {
+  display: inline;
+  background-color: #30a9d1;
+  border: solid, #30a9d1, 1px;
+  color: white;
+  border-radius: 2px;
+  margin-top: 10px;
+}
+
 
 .js-title {
   cursor: pointer;
@@ -48,7 +60,7 @@ h1 {
 
 }
 .js-item-element:hover h2 {
-  color: darkviolet
+  color: rgb(40, 138, 230)
 }
 
 @media only screen and (min-width: 340px) {
