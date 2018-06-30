@@ -23,7 +23,7 @@ const bookmarkList = (function () {
     <form class='js-create-form'>
       <label>Title:<input class='create-title' required type='text' placeholder='espn'></label>
       <label>Url:<input class='create-url' required type='url' placeholder='https://www.espn.com'></label>
-      <label>Description:</label><textarea rows=5 columns=200 required type='text' placeholder="Description"></textarea>
+      <label>Description:</label><textarea rows=5 columns=200 required type='text' placeholder="Description" class ='create-description'></textarea>
       <label>Rating:<select name='rating' class='create-rating'>
           <option value='5'>5 stars</option>
           <option value='4'>4 stars</option>
